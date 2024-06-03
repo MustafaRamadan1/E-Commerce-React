@@ -1,0 +1,29 @@
+.slider{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .container{
+
+    }
+
+    .icons{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        position: absolute;
+        left: 45%;
+        top: 1000px;
+
+        .icon{
+            background-color: #777;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border-radius: 20px;
+            
+        }
+    }
+
+}

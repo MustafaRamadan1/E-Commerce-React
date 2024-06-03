@@ -1,9 +1,10 @@
 import React from 'react'
-
+import Slider from '../../components/Slider/Slider'
+import './Home.scss'
 function Home() {
   return (
-    <div>
-      djaajdjdjaa
+    <div className='home'>
+      <Slider/>
     </div>
   )
 }
