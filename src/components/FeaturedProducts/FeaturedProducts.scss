@@ -1,58 +1,23 @@
 .featuredProducts{
-    display: flex;
-    flex-direction: column;
-    margin:  100px 200px ;
-
-    .title{
+    margin: 100px 200px;
+    .top{
         display: flex;
         justify-content: space-between;
         align-items: center;
-
+        margin-bottom: 50px;
         h1{
-            font-size: 30px;
-            font-weight: 500;
+            flex: 2;
+            text-transform: capitalize;
         }
         p{
-            font-size: 15px;
-            color: #777;
+            flex:3;
+            color: gray;
         }
-        
     }
-    .products{
+
+    .bottom{
         display: flex;
         justify-content: center;
-        gap: 40px;
-        margin-left: 60px;
-        margin-top: 40px;
-
-        .product{
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-
-            img{
-                width: 100%;
-                width: 250px;
-                border-radius: 15px;
-                overflow: hidden;
-                height: 300px;
-                margin-bottom: 5px;
-            }
-            .productTitle{
-                color: #777;
-                font-size: 17px;
-            }
-            p{
-                color: #000;
-                font-weight: 700;
-                
-                .oldPrice{
-                    color: #777;
-                    font-size: 15px;
-                    text-decoration: line-through;
-                    margin-right: 10px;
-                }
-            }
-        }
+        gap: 50px
     }
 }

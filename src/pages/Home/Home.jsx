@@ -6,7 +6,8 @@ function Home() {
   return (
     <div className='home'>
       <Slider/>
-      <FeaturedProducts type='featured'/>
+      <FeaturedProducts type='Featured'/>
+      <FeaturedProducts type='Trending'/>
     </div>
   )
 }

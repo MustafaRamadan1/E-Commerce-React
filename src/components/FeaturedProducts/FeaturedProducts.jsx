@@ -1,7 +1,8 @@
 import React from "react";
 import "./FeaturedProducts.scss";
+import Card from "../Card/Card";
 
-function FeaturedProducts() {
+function FeaturedProducts(props) {
 
   const products = [
     {
@@ -44,23 +45,21 @@ function FeaturedProducts() {
 
   return (
     <div className="featuredProducts">
-      <div className="title">
-        <h1>Featured Products</h1>
-        <p>dajdajdajdajdjaajddjadjadjadajdjajadjdjdajdajadjdjdajdajdajdajda</p>
+      <div className="top">
+        <h1>{props.type} Products</h1>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+          suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+          lacus vel facilisis labore et dolore magna aliqua. Quis ipsum
+          suspendisse ultrices gravida. Risus commodo viverra maecenas.
+
+        </p>
       </div>
-      <div className="products">
-        {products.map((product) => {
-          return (
-            <div className="product" key={product.id}>
-              <img src={product.img} alt={product.title}  />
-              <span className="productTitle">{product.title}</span>
-              <p>
-                <span className="oldPrice">{product.oldPrice}$</span>
-                {product.price}$
-              </p>
-            </div>
-          );
-        })}
+      <div className="bottom">
+            {
+                products.map((item)=> <Card key={item.id} item={item}/>)
+            }
       </div>
     </div>
   );
