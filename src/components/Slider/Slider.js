@@ -4,8 +4,9 @@ import WestOutlinedIcon from "@mui/icons-material/WestOutlined";
 import "./Slider.scss";
 import { useState } from "react";
 export default function Slider() {
-    const[currentImage, setCurrentImage] = useState(0);
-  const data = [
+    const[currentSlide, setCurrentSlide] = useState(0);
+
+    const data = [
     "https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -13,27 +14,27 @@ export default function Slider() {
 
   const handleNextImage = ()=>{
 
-    currentImage === data.length - 1? setCurrentImage(0) : setCurrentImage(currentImage + 1)
+    currentSlide === data.length - 1? setCurrentSlide(0) : setCurrentSlide(currentSlide + 1)
   }
 
   const handlePrevImage = ()=>{
 
-    currentImage === 0? setCurrentImage(data.length - 1) : setCurrentImage(currentImage - 1);
+    currentSlide === 0? setCurrentSlide(data.length - 1) : setCurrentSlide(currentSlide - 1);
   }
-  console.log(currentImage)
+ 
   return (
     <div className="slider">
-      <div className="container">
-        <img src={data[currentImage]} alt="" />
-        {/* <img src={data[1]} alt="" />
-        <img src={data[currentImage]} alt="" /> */}
+      <div className="container" style={{transform: `translateX(-${currentSlide * 100}vw)`}}>
+        <img src={data[0]} alt="" />
+        <img src={data[1]} alt="" />
+        <img src={data[2]} alt="" />
       </div>
       <div className="icons">
-        <div className="icon" onClick={handleNextImage} style={{cursor:"pointer"}}>
+        <div className="icon" onClick={handlePrevImage} style={{cursor:"pointer"}}>
             <WestOutlinedIcon/>
         </div>
         <div className="icon" style={{cursor:"pointer"}}>
-            <EastOutlinedIcon onClick={handlePrevImage}/>
+            <EastOutlinedIcon onClick={handleNextImage}/>
         </div>
         
       </div>
