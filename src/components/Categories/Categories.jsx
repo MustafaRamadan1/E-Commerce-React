@@ -70,12 +70,10 @@ const Categories = () => {
             
             </div>
         </div>
-        <div className="row">
+        <div className="row" >
         <img
             src="https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt=""
-            width={`250px`}
-            height={`150px`}
           />
           <button>
             <Link to="/products/1" className="link">
