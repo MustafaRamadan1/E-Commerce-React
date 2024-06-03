@@ -1,0 +1,58 @@
+.featuredProducts{
+    display: flex;
+    flex-direction: column;
+    margin:  100px 200px ;
+
+    .title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1{
+            font-size: 30px;
+            font-weight: 500;
+        }
+        p{
+            font-size: 15px;
+            color: #777;
+        }
+        
+    }
+    .products{
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-left: 60px;
+        margin-top: 40px;
+
+        .product{
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+
+            img{
+                width: 100%;
+                width: 250px;
+                border-radius: 15px;
+                overflow: hidden;
+                height: 300px;
+                margin-bottom: 5px;
+            }
+            .productTitle{
+                color: #777;
+                font-size: 17px;
+            }
+            p{
+                color: #000;
+                font-weight: 700;
+                
+                .oldPrice{
+                    color: #777;
+                    font-size: 15px;
+                    text-decoration: line-through;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
