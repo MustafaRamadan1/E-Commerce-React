@@ -31,10 +31,10 @@ export default function Slider() {
       </div>
       <div className="icons">
         <div className="icon" onClick={handlePrevImage} style={{cursor:"pointer"}}>
-            <WestOutlinedIcon/>
+            <WestOutlinedIcon style={{color: 'grey'}}/>
         </div>
         <div className="icon" style={{cursor:"pointer"}}>
-            <EastOutlinedIcon onClick={handleNextImage}/>
+            <EastOutlinedIcon style={{color: 'grey'}} onClick={handleNextImage}/>
         </div>
         
       </div>

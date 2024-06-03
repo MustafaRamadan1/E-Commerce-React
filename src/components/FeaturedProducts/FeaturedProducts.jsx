@@ -16,8 +16,8 @@ function FeaturedProducts(props) {
     },
     {
       id: 2,
-      img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f",
-      img2: "https://images.unsplash.com/photo-1542332213-9c4e1b0d1d48",
+      img: "https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/34/123132/1.jpg?9331",
+      img2: "https://i5.walmartimages.com/asr/38405943-e7e3-4f7b-984a-5b16b55df7c9.c411e937532bb2b2b12970eb8080aaa8.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
       title: "Casual Men's Jacket",
       isNew: false,
       oldPrice: 79.99,
