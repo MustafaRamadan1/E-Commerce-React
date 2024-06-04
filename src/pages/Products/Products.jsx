@@ -4,7 +4,7 @@ import List from "../../components/List/List";
 import { useParams } from "react-router-dom";
 function Products() {
   const catId = +useParams().id;
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [maxPrice, setMaxPrice] = useState(700);
   const [sort, setSort] = useState(null);
   return (
     <div className="products">
@@ -32,6 +32,7 @@ function Products() {
               type="range"
               min={0}
               max={1000}
+              defaultValue={700}
               onChange={(e) => setMaxPrice(e.target.value)}
             />
             <span>{maxPrice}</span>
