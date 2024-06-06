@@ -29,25 +29,28 @@ function Cart() {
      {
       products? products.map((product)=>{
         return (
-          <div className="cartItem">
-          <div>
-          <h3>{product.title}</h3>
+      
+        <div className="item">
+            <img src={product.img} alt={product.title}/>
+          <div className="details">
+            <h1>{product.title}</h1>
+            <p className="description">
+              {product.description.slice(0,100)}
+            </p>
+          <div className="price">1 x ${product.price} </div>
           </div>
-          <div className="item">
-          <img src={product.img} alt={product.title}/>
-            <div className="info">
-            <span className="description">
-              {product.description}
-            </span>
-            </div>
           <DeleteIcon className="delete"/>
-          </div>
-          <p className="price">1 x ${product.price} </p>
         </div>
+      
         )
       }) : null
      }
-      
+     <div className='total'>
+        <span>SUBTOTAL</span> 
+        <span>1123</span>
+     </div> 
+     <button>CheckOut</button>
+     <span className="reset">Reset Cart</span>
     </div>
   );
 }
