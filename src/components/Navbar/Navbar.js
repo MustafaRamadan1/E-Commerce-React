@@ -12,7 +12,7 @@ import Cart from "../Cart/Cart";
 function Navbar() {
   const [openCart, setOpenCart] = useState(false)
   return (
-    <div className="navbar">
+    <div className="navbar" >
       <div className="wrapper">
         <div className="left">
           <div className="item">
@@ -53,14 +53,15 @@ function Navbar() {
             <SearchIcon />
             <PersonOutlineOutlinedIcon />
             <FavoriteBorderOutlinedIcon />
-            <div className="cartIcon">
-              <ShoppingCartOutlinedIcon onClick={()=> setOpenCart(!openCart)}/>
+            <div className="cartIcon" onClick={()=> setOpenCart(!openCart)}>
+              <ShoppingCartOutlinedIcon />
               <span>0</span>
              
             </div>
             
           </div>
         </div>
+       
       </div>
       {
         openCart && <Cart/>

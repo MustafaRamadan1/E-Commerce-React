@@ -10,6 +10,8 @@ import Products from './pages/Products/Products';
 import Product from './pages/Product/Product';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 
 const Layout =()=>{
@@ -43,11 +45,13 @@ const router = createBrowserRouter([
   }
 ])
 function App() {
+
+
+  
   return (
     <div className="App">
       <RouterProvider router={router}/>
     </div>
-
   );
 }
 

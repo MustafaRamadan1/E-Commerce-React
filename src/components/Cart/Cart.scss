@@ -1,75 +1,72 @@
-.cart{
-    background-color: white;
-    padding: 30px;
+.cart {
+  position: absolute;
+  right: 20px;
+  top: 80px;
+  z-index: 2;
+  max-width: 500px;
+  background-color: white;
+  padding: 20px;
+  --webkit-box-shadow: 0px 0px 7px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 7px;
+
+  h1{
+    font-weight: 400;
+    color: gray;
+  }
+  .item {
     display: flex;
-    flex-direction: column;
-    height: min-content;
-    position: fixed;
-    top:30px;
-    right: 50px;
-    width: 300px;
-    z-index: 3;
+    justify-content: center;
+    gap:25px;
+    align-items: center;
 
-    h3{
+    p{
+      font-size: 18px;
+      font-weight: 300;
+      text-align: justify;
+    }
+
+
+    .price{
+        color:#2879fe;
+        font-size: 18px;
         font-weight: 500;
-        font-size: 23px;
-        color: gray;
-        text-align: left;
+        margin-bottom: 5px;
+    }
+    img {
+      width: 100px;
+      height: 150px;
+      object-fit: cover;
     }
 
-    .cartItem{
-      
-        .price{
-            color: #2879fe;
-            margin-right: 71px;
-            font-weight: 500;
-            margin-top: 7px;
-            text-align: center;
-            margin-left: 12px;
-        }
-        img{
-            width: 150px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .item{
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            text-align: justify;
-            align-items: center;
-            font-size: 18px;
-            font-weight: 500;
-            color: gray;
-           
-        }
-        .description{
-            
-            font-weight: 400;
-            font-size: 14px;
-        }
-
-        .info{
-            display: flex;
-            flex-direction: column;
-            gap:40px;
-          
-            
-            
-        }
-
-
-        .delete{
-            color:rgb(185, 26, 26);
-            cursor: pointer;
-        }
-
-        .delete:hover{
-            color: black
-        }
-
-
+    .delete{
+        color:rgb(160, 0, 0);
+        font-size: 30px;
+        cursor: pointer;
     }
+  }
+
+  button{
+    width: 250px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #2879fe;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  .total{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .reset{
+    color: rgb(163, 10, 10);
+    
+    cursor: pointer;
+  }
 }
