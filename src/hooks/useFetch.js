@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { makeRequest } from "../makingRequest";
  const useFetch = (url) => {
-  const [products, setProducts] = useState(null);
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   useEffect(() => {
@@ -14,7 +14,7 @@ import { makeRequest } from "../makingRequest";
           },
         });
         
-        setProducts(data.data.data);
+        setData(data.data.data);
       } catch (err) {
         
         setError(true);
@@ -26,7 +26,7 @@ import { makeRequest } from "../makingRequest";
 
   }, [url]);
 
-  return {products, loading, error}
+  return {data, loading, error}
 };
 
 

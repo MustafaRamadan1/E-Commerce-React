@@ -2,27 +2,37 @@ import React, { useState } from "react";
 import "./Products.scss";
 import List from "../../components/List/List";
 import { useParams } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
 function Products() {
   const catId = +useParams().id;
   const [maxPrice, setMaxPrice] = useState(700);
   const [sort, setSort] = useState(null);
+  const [selectedSubCategories, setSelectedSubCategories] = useState([])
+  const {data, loading, error} = useFetch(`/sub-categories?[filters][categories][id][$eq]=${catId}`);
+  
+  const handleChange =(e)=>{
+    const isChecked = e.target.checked;
+    const value = e.target.value;
+
+    setSelectedSubCategories(isChecked? [...selectedSubCategories, value]: [...selectedSubCategories]);
+    
+    }
+  console.log(selectedSubCategories)
   return (
     <div className="products">
       <div className="left">
         <div className="filterItem">
           <h2>Product Categories</h2>
-          <div className="inputItem">
-            <input type="checkbox" id="1" value={`1`} />
-            <label htmlFor="1">Shoes</label>
-          </div>
-          <div className="inputItem">
-            <input type="checkbox" id="2" value={`2`} />
-            <label htmlFor="2">Skirts</label>
-          </div>
-          <div className="inputItem">
-            <input type="checkbox" id="3" value={`3`} />
-            <label htmlFor="1">Coats</label>
-          </div>
+          {
+            data? data.map((item)=>{
+              return (
+                <div className="inputItem" key={item.id }>
+                  <input type="checkbox" id={item.id} value={item.id} onChange={handleChange} />
+                  <label htmlFor={item.id}>{item.attributes.title}</label>
+                </div>
+              )
+            }) : null
+          } 
         </div>
         <div className="filterItem">
           <h2>Filter by Price</h2>
