@@ -2,9 +2,9 @@ import React from "react";
 import "./FeaturedProducts.scss";
 import Card from "../Card/Card";
 import useFetch from '../../hooks/useFetch';
+import Loading from '../Loading/Loading';
 function FeaturedProducts(props) {
-
-  const {products, loading, error} = useFetch(`/products?populate=*&[filters][type][$eq]=${props.type}`);
+   const  {products, error, loading}= useFetch(`/products?populate=*&[filters][type][$eq]=${props.type}`)
   return (
     <div className="featuredProducts">
       <div className="top">
@@ -19,7 +19,7 @@ function FeaturedProducts(props) {
       </div>
       <div className="bottom">
         {
-          loading? 'Loading' : products? products? products.map((item) => (
+          loading?<Loading/> : products? products? products.map((item) => (
             <Card key={item.id} item={item} />
           )) : null:false
         }
