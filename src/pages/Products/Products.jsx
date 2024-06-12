@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Products.scss";
 import List from "../../components/List/List";
 import { useParams } from "react-router-dom";
@@ -12,12 +12,9 @@ function Products() {
   
   const handleChange =(e)=>{
     const isChecked = e.target.checked;
-    const value = e.target.value;
-
-    setSelectedSubCategories(isChecked? [...selectedSubCategories, value]: [...selectedSubCategories]);
-    
+    const value = e.target.value;  
     }
-  console.log(selectedSubCategories)
+  
   return (
     <div className="products">
       <div className="left">
@@ -27,8 +24,8 @@ function Products() {
             data? data.map((item)=>{
               return (
                 <div className="inputItem" key={item.id }>
-                  <input type="checkbox" id={item.id} value={item.id} onChange={handleChange} />
-                  <label htmlFor={item.id}>{item.attributes.title}</label>
+                  <input type="checkbox" id={item.id} value={item.attributes.title} onChange={handleChange} />
+                  <label  htmlFor={item.id}>{item.attributes.title}</label>
                 </div>
               )
             }) : null
